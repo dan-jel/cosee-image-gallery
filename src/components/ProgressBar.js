@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import useStorage from "../hooks/useStorage";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const ProgressBar = ({ file, setFile }) => {
   const { url, progress } = useStorage(file);
@@ -11,11 +12,15 @@ const ProgressBar = ({ file, setFile }) => {
     }
   }, [url, setFile]);
 
-  return <Container progress={progress}></Container>;
+  return (
+    <Container
+      initial={{ width: 0 }}
+      animate={{ width: progress + "%" }}
+    ></Container>
+  );
 };
 
-const Container = styled.div`
-  width: ${(props) => props.progress}%;
+const Container = styled(motion.div)`
   background: red;
   height: 10px;
 `;
