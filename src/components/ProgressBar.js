@@ -3,8 +3,13 @@ import useStorage from "../hooks/useStorage";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const ProgressBar = ({ file, setFile }) => {
+const ProgressBar = ({ file, setFile, setInputForm }) => {
   const { url, progress } = useStorage(file);
+
+  if (progress === 100)
+    setTimeout(function () {
+      setInputForm(false);
+    }, 600);
 
   useEffect(() => {
     if (url) {
@@ -16,12 +21,13 @@ const ProgressBar = ({ file, setFile }) => {
     <Container
       initial={{ width: 0 }}
       animate={{ width: progress + "%" }}
+      transition={{ ease: "anticipate" }}
     ></Container>
   );
 };
 
 const Container = styled(motion.div)`
-  background: red;
+  background: #a2d2ff;
   height: 10px;
 `;
 

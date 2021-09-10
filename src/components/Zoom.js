@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 const Zoom = ({ selectedImage, setSelectedImage }) => {
   const handleClick = (e) => {
+    console.log("click");
     if (e.target.classList.contains("close")) {
       setSelectedImage(null);
     }
