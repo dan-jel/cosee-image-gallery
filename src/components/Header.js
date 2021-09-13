@@ -44,10 +44,10 @@ const Container = styled.div`
 
 const Line = styled.div`
   height: 3px;
-  width: 60%;
+  width: 80%;
   background: black;
   position: relative;
-  left: 20%;
+  left: 10%;
   margin: 10px;
 `;
 

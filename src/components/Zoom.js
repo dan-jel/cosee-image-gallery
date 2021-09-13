@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 const Zoom = ({ selectedImage, setSelectedImage }) => {
   const handleClick = (e) => {
-    console.log("click");
     if (e.target.classList.contains("close")) {
       setSelectedImage(null);
     }
@@ -34,14 +33,21 @@ const Container = styled(motion.div)`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
 
   img {
     display: block;
     max-width: 80%;
     max-height: 80%;
-    margin: 50px auto;
     box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
     border: 3px solid white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 `;
 

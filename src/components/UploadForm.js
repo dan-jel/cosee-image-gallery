@@ -28,10 +28,10 @@ const UploadForm = ({ setInputForm }) => {
   };
 
   const ClickHandler = (e) => {
-    console.log();
     if (tempFile) {
       if (tag) {
-        setFile(tempFile);
+        let image = { image: tempFile, tag: tag };
+        setFile(image);
       } else {
         setError("please add a tag");
       }
@@ -41,7 +41,6 @@ const UploadForm = ({ setInputForm }) => {
   };
 
   const handleClick = (e) => {
-    console.log("click");
     if (e.target.classList.contains("close")) {
       setInputForm(null);
     }
@@ -90,9 +89,9 @@ const UploadForm = ({ setInputForm }) => {
 };
 
 const SpacingProgressBar = styled.div`
-  width: 90%;
+  width: 100%;
   height: 10px;
-  background: #ced4da;
+  background: white;
   margin-top: 20px;
 `;
 
@@ -123,7 +122,7 @@ const InputForm = styled.form`
   align-items: center;
   overflow: hidden;
   .tag {
-    width: 200px;
+    width: 100%;
     height: 30px;
     text-align: center;
     font-size: 1.3rem;

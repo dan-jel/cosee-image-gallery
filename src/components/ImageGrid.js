@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 
 const ImageGrid = ({ setSelectedImage }) => {
   const { docs } = useFirestore("images");
-  console.log(docs);
   return (
     <Container>
       {docs &&
@@ -27,25 +26,33 @@ const ImageGrid = ({ setSelectedImage }) => {
 
 const Container = styled.div`
   display: grid;
-  margin: 20px auto;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 40px;
+  margin: 40px;
+  grid-gap: 20px;
+  grid-template-columns: 400px 400px 400px;
+  justify-content: center;
+  @media (max-width: 1300px) {
+    grid-template-columns: 400px 400px;
+  }
+  @media (max-width: 900px) {
+    grid-template-columns: 400px;
+  }
 `;
 
 const ImageBox = styled(motion.div)`
   overflow: hidden;
-  height: 0;
-  padding: 50% 0;
+  height: 400px;
+  width: 400px;
   position: relative;
   opacity: 0.8;
 
   img {
-    min-width: 100%;
-    min-height: 100%;
-    max-width: 150%;
+    height: 100%;
+    width: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
   }
 `;
 
