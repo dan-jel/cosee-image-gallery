@@ -18,11 +18,7 @@ const ImageGrid = ({ setSelectedImage }) => {
             onClick={() => setSelectedImage(doc.url)}
           >
             <ImageBox>
-              <motion.img
-                whileHover={{ opacity: 1 }}
-                src={doc.url}
-                alt="document pic"
-              />
+              <motion.img src={doc.url} alt="document pic" />
             </ImageBox>
             <Tag>{doc.tag}</Tag>
           </Card>
@@ -34,7 +30,6 @@ const ImageGrid = ({ setSelectedImage }) => {
 const Card = styled(motion.div)`
   height: 430px;
   width: 100%;
-  margin: 10px;
   border-radius: 15px;
   overflow: hidden;
   border: 1px solid #dddddd;
@@ -71,8 +66,6 @@ const ImageBox = styled.div`
   height: 400px;
   width: 400px;
   position: relative;
-  opacity: 0.8;
-
   img {
     height: 100%;
     width: 100%;

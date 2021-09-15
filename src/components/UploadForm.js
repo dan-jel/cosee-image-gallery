@@ -134,6 +134,9 @@ const InputForm = styled.form`
   p {
     margin: 0;
   }
+  .error {
+    color: red;
+  }
 `;
 
 const SubmitButton = styled.button`
