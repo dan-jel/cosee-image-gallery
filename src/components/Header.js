@@ -40,6 +40,7 @@ const Container = styled.div`
   text-align: center;
   font-size: 2rem;
   align-items: center;
+  font-family: "Poller One", cursive;
 `;
 
 const Line = styled.div`
